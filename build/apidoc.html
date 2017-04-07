@@ -1,0 +1,923 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/nikhilmodak/gulp-ngdocs#readme"
+
+    >gulp-ngdocs (v0.3.0)</a>
+</h1>
+<h4>gulp plugin for angularjs documentation</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ngdocs">module gulp-ngdocs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.process">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.</span>process
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.sections">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.</span>sections
+            <span class="apidocSignatureSpan">(sects)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-ngdocs.</span>dom</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-ngdocs.</span>ngdoc</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-ngdocs.</span>reader</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ngdocs.dom">module gulp-ngdocs.dom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.dom.DOM">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.dom.</span>DOM
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.dom.htmlEscape">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.dom.</span>htmlEscape
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.dom.normalizeHeaderToId">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.dom.</span>normalizeHeaderToId
+            <span class="apidocSignatureSpan">(header)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ngdocs.ngdoc">module gulp-ngdocs.ngdoc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.ngdoc.Doc">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>Doc
+            <span class="apidocSignatureSpan">(text, file, line, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.ngdoc.checkBrokenLinks">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>checkBrokenLinks
+            <span class="apidocSignatureSpan">(docs, apis, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.ngdoc.merge">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>merge
+            <span class="apidocSignatureSpan">(docs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.ngdoc.metadata">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>metadata
+            <span class="apidocSignatureSpan">(docs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.ngdoc.scenarios">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>scenarios
+            <span class="apidocSignatureSpan">(docs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.ngdoc.trim">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>trim
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ngdocs.reader">module gulp-ngdocs.reader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ngdocs.reader.process">
+            function <span class="apidocSignatureSpan">gulp-ngdocs.reader.</span>process
+            <span class="apidocSignatureSpan">(content, file, section, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-ngdocs.reader.</span>docs</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-ngdocs" id="apidoc.module.gulp-ngdocs">module gulp-ngdocs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.process" id="apidoc.element.gulp-ngdocs.process">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.</span>process
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function processDoc(opts) {
+  opts = opts || {};
+
+  var options = extend({
+    startPage: &#x27;/api&#x27;,
+    scripts: [],
+    styles: [],
+    title: &#x27;API Documentation&#x27;,
+    html5Mode: true,
+    editExample: true,
+    navTemplate: false,
+    navContent: &#x27;&#x27;,
+    navTemplateData: {}
+  }, opts);
+
+  setup.pages = [];
+  //Extend loadDefaults
+  options.loadDefaults = extend({
+      angular: true,
+      angularAnimate: true,
+      marked: true
+    }, opts.loadDefaults);
+
+  if (options.scripts &#x26;&#x26; !(options.scripts instanceof Array)) {
+    options.scripts = [options.scripts];
+  }
+  if (options.styles &#x26;&#x26; !(options.styles instanceof Array)) {
+    options.styles = [options.styles];
+  }
+  var defaultSection = &#x27;api&#x27;;
+  var defaultScripts = [];
+
+  //Default root paths for scripts
+  var scriptPaths = {
+    angular : [
+      &#x27;angular/angular.min.js&#x27;,
+      &#x27;angular/angular.min.js.map&#x27;
+    ],
+    angularAnimate: [
+      &#x27;angular-animate/angular-animate.min.js&#x27;,
+      &#x27;angular-animate/angular-animate.min.js.map&#x27;
+    ],
+    marked: [
+      &#x27;marked/lib/marked.js&#x27;
+    ]
+  };
+
+  //Sets default script paths
+  function joinNodeModules(jsPaths){
+    _.each(jsPaths, function(jsPath){
+      var libPath = path.join(nodeModules, jsPath),
+          flattenedLibPath = path.join(flattenedNodeModules, jsPath);
+
+      if (fs.existsSync(libPath)) {
+        defaultScripts.push(libPath);
+      } else if (fs.existsSync(flattenedLibPath)) {
+        defaultScripts.push(flattenedLibPath);
+      } else {
+        console.error(&#x27;Could not find &#x27; + jsPath);
+      }
+    });
+  }
+  //Iterate and checks to join paths
+  _.each(scriptPaths, function(paths, key){
+    if(options.loadDefaults[key])
+      joinNodeModules(paths);
+  });
+
+  function writeSetup() {
+    var options = setup.__options,
+        content, data = {
+          scripts: options.scripts,
+          styles: options.styles,
+          sections: _.keys(setup.sections).join(&#x27;|&#x27;),
+          discussions: options.discussions,
+          analytics: options.analytics,
+          navContent: options.navContent,
+          title: options.title,
+          image: options.image,
+          titleLink: options.titleLink,
+          imageLink: options.imageLink,
+          bestMatch: options.bestMatch,
+          deferLoad: !!options.deferLoad
+        };
+
+    // create index.html
+    var index = path.resolve(templates, &#x27;index.tmpl&#x27;);
+    if (options.template &#x26;&#x26; path.resolve(options.template)) {
+      index = options.template;
+    }
+    content = fs.readFileSync(index, &#x27;utf8&#x27;);
+    content = _.template(content, data);
+    docsStream.push(new File({
+      base: fakeDest,
+      cwd: fakeDest,
+      path: path.join(fakeDest, &#x27;index.html&#x27;),
+      contents: new Buffer(content, &#x27;utf8&#x27;)
+    }));
+    // create setup file
+    setup.html5Mode = options.html5Mode;
+    setup.editExample = options.editExample;
+    setup.startPage = options.startPage;
+    setup.discussions = options.discussions;
+    setup.scripts = options.scripts;
+    docsStream.push(new File({
+      base: fakeDest,
+      cwd: fakeDest,
+      path: setup.__file,
+      contents: new Buffer(&#x27;NG_DOCS=&#x27; + JSON.stringify(setup, null, 2) + &#x27;;&#x27;, &#x27;utf8&#x27;)
+    }));
+  }
+
+  function transformFunction (file, enc, callback) {
+    if (file.isNull()) {
+      callback(null);
+      return; // ignore
+    }
+    if (file.isStream()) {
+      callback(new gutil.PluginError(&#x27;gulp-ngdocs&#x27;, &#x27;Streaming not supported&#x27;));
+      return;
+    }
+    if (file.contents) {
+      if (!merged) {
+        merged = merge(fstreams.map(function (f) {
+          var s = f();
+          s.on(&#x27;data&#x27;, function (file) {
+            docsStream.push(file);
+          });
+          return s;
+        }));
+
+        merged.on(&#x27;end&#x27;, function () {
+          mergedEnded = true;
+          if (docsStreamEndCb) {
+            docsStreamEndCb(null);
+          }
+        });
+      }
+      var content = decoder.write(file.contents);
+      if (!file.section) {
+        file.section = defaultSection;
+      }
+      reader.process(content, file.path, file.section, options);
+    }
+    callback(null);
+  }
+
+  function flushFunction (cb) {
+    if (merged) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Create a `ngdocs` gulp task
+
+```js
+gulp.task(&#x27;ngdocs&#x27;, [], function () {
+  var gulpDocs = require(&#x27;gulp-ngdocs&#x27;);
+  return gulp.src(&#x27;path/to/src/*.js&#x27;)
+    .pipe(gulpDocs.<span class="apidocCodeKeywordSpan">process</span>())
+    .pipe(gulp.dest(&#x27;./docs&#x27;));
+});
+```
+Create a `ngdocs` gulp task with options
+
+```js
+gulp.task(&#x27;ngdocs&#x27;, [], function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.sections" id="apidoc.element.gulp-ngdocs.sections">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.</span>sections
+        <span class="apidocSignatureSpan">(sects)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function sections(sects) {
+  return merge(_.map(sects, function (data, key) {
+    if (data instanceof String) {
+      data = {glob: data};
+    }
+    if (!data.hasOwnProperty(&#x27;glob&#x27;)) {
+      throw new PluginError(&#x27;gulp-ngdocs&#x27;, &#x27;Invalid sections, please refer to the documentation.&#x27;);
+    }
+    if (!data.hasOwnProperty(&#x27;title&#x27;)) {
+      data.title = key;
+    }
+    if (!data.hasOwnProperty(&#x27;api&#x27;)) {
+      data.api = true;
+    }
+    var glob = data.glob;
+    var opts = data.globOpts;
+    setup.sections[key] = data.title;
+    setup.apis[key] = data.api;
+    return vfs.src(glob, opts)
+      .pipe(through2.obj(
+        function (file, enc, cb) {
+          file.section = key;
+          this.push(file);
+          cb(null);
+        }
+      ));
+    }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```js
+gulp.task(&#x27;ngdocs&#x27;, [], function () {
+var gulpDocs = require(&#x27;gulp-ngdocs&#x27;);
+var options = {
+  //options
+}
+return gulpDocs.<span class="apidocCodeKeywordSpan">sections</span>({
+  api: {
+    glob:[&#x27;src/**/*.js&#x27;, &#x27;!src/**/*.spec.js&#x27;],
+    api: true,
+    title: &#x27;API Documentation&#x27;
+  },
+  tutorial: {
+    glob: [&#x27;content/tutorial/*.ngdoc&#x27;],
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-ngdocs.dom" id="apidoc.module.gulp-ngdocs.dom">module gulp-ngdocs.dom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.dom.DOM" id="apidoc.element.gulp-ngdocs.dom.DOM">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.dom.</span>DOM
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DOM() {
+  this.out = [];
+  this.headingDepth = 0;
+  this.currentHeaders = [];
+  this.anchors = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.dom.htmlEscape" id="apidoc.element.gulp-ngdocs.dom.htmlEscape">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.dom.</span>htmlEscape
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function htmlEscape(text){
+  return text
+          .replace(/&#x26;/g, &#x27;&#x26;amp;&#x27;)
+          .replace(/&#x3c;/g, &#x27;&#x26;lt;&#x27;)
+          .replace(/&#x3e;/g, &#x27;&#x26;gt;&#x27;)
+          .replace(/\{\{/g, &#x27;&#x3c;span&#x3e;{{&#x3c;/span&#x3e;&#x27;)
+          .replace(/\}\}/g, &#x27;&#x3c;span&#x3e;}}&#x3c;/span&#x3e;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.dom.normalizeHeaderToId" id="apidoc.element.gulp-ngdocs.dom.normalizeHeaderToId">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.dom.</span>normalizeHeaderToId
+        <span class="apidocSignatureSpan">(header)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalizeHeaderToId(header) {
+  if (typeof header !== &#x27;string&#x27;) {
+    return &#x27;&#x27;;
+  }
+
+  return header.toLowerCase()
+      .replace(/&#x3c;.*&#x3e;/g, &#x27;&#x27;)         // html tags
+      .replace(/[\!\?\:\.\&#x27;]/g, &#x27;&#x27;) // special characters
+      .replace(/&#x26;#\d\d;/g, &#x27;&#x27;)      // html entities
+      .replace(/\(.*\)/mg, &#x27;&#x27;)      // stuff in parenthesis
+      .replace(/\s$/, &#x27;&#x27;)           // trailing spaces
+      .replace(/\s+/g, &#x27;-&#x27;);        // replace whitespaces with dashes
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-ngdocs.ngdoc" id="apidoc.module.gulp-ngdocs.ngdoc">module gulp-ngdocs.ngdoc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.ngdoc.Doc" id="apidoc.element.gulp-ngdocs.ngdoc.Doc">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>Doc
+        <span class="apidocSignatureSpan">(text, file, line, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Doc(text, file, line, options) {
+  if (typeof text == &#x27;object&#x27;) {
+    for ( var key in text) {
+      this[key] = text[key];
+    }
+  } else {
+    this.text = text;
+    this.file = file;
+    this.line = line;
+  }
+  this.options = options || {};
+  this.scenarios = this.scenarios || [];
+  this.requires = this.requires || [];
+  this.param = this.param || [];
+  this.properties = this.properties || [];
+  this.methods = this.methods || [];
+  this.events = this.events || [];
+  this.links = this.links || [];
+  this.anchors = this.anchors || [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// console.log(&#x27;&#x27;)
+if (/\.js|.ts$/.test(file)) {
+  processJsFile(content, file, section, options).forEach(function(doc) {
+    exports.docs.push(doc);
+  });
+} else if (file.match(/\.ngdoc$/)) {
+  var header = &#x27;@section &#x27; + section + &#x27;\n&#x27;;
+  exports.docs.push(new ngdoc.<span class="apidocCodeKeywordSpan">Doc</span>(header + content.toString(),file, 1, options).parse
+());
+}
+}
+
+function processJsFile(content, file, section, options) {
+var docs = [];
+var lines = content.toString().split(NEW_LINE);
+var text;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.ngdoc.checkBrokenLinks" id="apidoc.element.gulp-ngdocs.ngdoc.checkBrokenLinks">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>checkBrokenLinks
+        <span class="apidocSignatureSpan">(docs, apis, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function checkBrokenLinks(docs, apis, options) {
+  var byFullId = Object.create(null);
+
+  docs.forEach(function(doc) {
+    byFullId[doc.section + &#x27;/&#x27; + doc.id] = doc;
+    if (apis[doc.section]) {
+      doc.anchors.push(&#x27;directive&#x27;, &#x27;service&#x27;, &#x27;filter&#x27;, &#x27;function&#x27;);
+    }
+  });
+
+  docs.forEach(function(doc) {
+    doc.links.forEach(function(link) {
+      if (options &#x26;&#x26; !options.html5Mode) {
+        link = link.substring(2);
+      }
+      // convert #id to path#id
+      if (link[0] == &#x27;#&#x27;) {
+        link = doc.section + &#x27;/&#x27; + doc.id.split(&#x27;#&#x27;).shift() + link;
+      }
+
+      var parts = link.split(&#x27;#&#x27;);
+      var pageLink = parts[0];
+      var anchorLink = parts[1];
+      var linkedPage = byFullId[pageLink];
+
+      if (!linkedPage) {
+        console.log(&#x27;WARNING: &#x27; + doc.section + &#x27;/&#x27; + doc.id + &#x27; (defined in &#x27; + doc.file + &#x27;) points to a non existing page &#x22;&#x27; +
+link + &#x27;&#x22;!&#x27;);
+      } else if (anchorLink &#x26;&#x26; linkedPage.anchors.indexOf(anchorLink) === -1) {
+        console.log(&#x27;WARNING: &#x27; + doc.section + &#x27;/&#x27; + doc.id + &#x27; (defined in &#x27; + doc.file + &#x27;) points to a non existing anchor &#x22;&#x27; +
+link + &#x27;&#x22;!&#x27;);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      var cause = docError.name + &#x27;: &#x27; + docError.message,
+          placement = doc.file + &#x27;:&#x27; + doc.line,
+          message = cause + &#x27; at &#x27; + placement;
+      throw new Error(message);
+    }
+  });
+
+  ngdoc.<span class="apidocCodeKeywordSpan">checkBrokenLinks</span>(reader.docs, setup.apis, options);
+
+  setup.pages = _.union(setup.pages, ngdoc.metadata(reader.docs));
+} catch (flushError) {
+  console.log(flushError);
+  cb(flushError);
+}
+writeSetup(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.ngdoc.merge" id="apidoc.element.gulp-ngdocs.ngdoc.merge">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>merge
+        <span class="apidocSignatureSpan">(docs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function merge(docs){
+  var byFullId = {};
+
+  docs.forEach(function(doc) {
+    byFullId[doc.section + &#x27;/&#x27; + doc.id] = doc;
+  });
+
+  for(var i = 0; i &#x3c; docs.length;) {
+    if (findParent(docs[i], &#x27;method&#x27;) || findParent(docs[i], &#x27;property&#x27;) || findParent(docs[i], &#x27;event&#x27;)) {
+      docs.splice(i, 1);
+    } else {
+      i++;
+    }
+  }
+
+  function findParent(doc, name) {
+    var parentName = doc[name + &#x27;Of&#x27;];
+    if (!parentName) return false;
+
+    var parent = byFullId[doc.section + &#x27;/&#x27; + parentName];
+    if (!parent)
+      throw new Error(&#x22;No parent named &#x27;&#x22; + parentName + &#x22;&#x27; for &#x27;&#x22; +
+        doc.name + &#x22;&#x27; in @&#x22; + name + &#x22;Of.&#x22;);
+
+    var listName = (name + &#x27;s&#x27;).replace(/ys$/, &#x27;ies&#x27;);
+    var list = parent[listName] = (parent[listName] || []);
+    list.push(doc);
+    list.sort(orderByName);
+    return true;
+  }
+
+  function orderByName(a, b){
+    return a.name &#x3c; b.name ? -1 : (a.name &#x3e; b.name ? 1 : 0);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  function flushFunction (cb) {
+if (merged) {
+  docsStreamEndCb = cb;
+  // IMPORTANT: If you do not want an error here to destroy a gulp watch,
+  // see: http://stackoverflow.com/questions/23971388/prevent-errors-from-breaking-crashing-gulp-watch
+  try{
+    ngdoc.<span class="apidocCodeKeywordSpan">merge</span>(reader.docs);
+    reader.docs.forEach(function(doc){
+      try {
+        // this hack is here because on OSX angular.module and angular.Module map to the same file.
+        var id = doc.id.replace(&#x27;angular.Module&#x27;, &#x27;angular.IModule&#x27;).replace(&#x27;:&#x27;, &#x27;.&#x27;),
+            file = path.join(fakeDest, &#x27;partials&#x27;, doc.section, id + &#x27;.html&#x27;),
+            dir = path.join(fakeDest, &#x27;partials&#x27;, doc.section);
+        docsStream.push(new File({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.ngdoc.metadata" id="apidoc.element.gulp-ngdocs.ngdoc.metadata">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>metadata
+        <span class="apidocSignatureSpan">(docs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function metadata(docs){
+  var pages = [];
+  docs.forEach(function(doc){
+    var path = (doc.name || &#x27;&#x27;).split(/(\:\s*)/);
+    for ( var i = 1; i &#x3c; path.length; i++) {
+      path.splice(i, 1);
+    }
+    var shortName = path.pop().trim();
+
+    if (path.pop() == &#x27;input&#x27;) {
+      shortName = &#x27;input [&#x27; + shortName + &#x27;]&#x27;;
+    }
+
+    pages.push({
+      section: doc.section,
+      id: doc.id,
+      name: title(doc),
+      shortName: shortName,
+      type: doc.ngdoc,
+      moduleName: doc.moduleName,
+      shortDescription: doc.shortDescription(),
+      keywords: doc.keywords()
+    });
+  });
+  pages.sort(sidebarSort);
+  return pages;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          message = cause + &#x27; at &#x27; + placement;
+      throw new Error(message);
+    }
+  });
+
+  ngdoc.checkBrokenLinks(reader.docs, setup.apis, options);
+
+  setup.pages = _.union(setup.pages, ngdoc.<span class="apidocCodeKeywordSpan">metadata</span>(reader.docs));
+} catch (flushError) {
+  console.log(flushError);
+  cb(flushError);
+}
+writeSetup(this);
+
+if (mergedEnded) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.ngdoc.scenarios" id="apidoc.element.gulp-ngdocs.ngdoc.scenarios">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>scenarios
+        <span class="apidocSignatureSpan">(docs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function scenarios(docs){
+  var specs = [];
+
+  specs.push(&#x27;describe(&#x22;angular+jqlite&#x22;, function() {&#x27;);
+  appendSpecs(&#x27;index-nocache.html#!/&#x27;);
+  specs.push(&#x27;});&#x27;);
+
+  specs.push(&#x27;&#x27;);
+  specs.push(&#x27;&#x27;);
+
+  specs.push(&#x27;describe(&#x22;angular+jquery&#x22;, function() {&#x27;);
+  appendSpecs(&#x27;index-jq-nocache.html#!/&#x27;);
+  specs.push(&#x27;});&#x27;);
+
+  return specs.join(&#x27;\n&#x27;);
+
+  function appendSpecs(urlPrefix) {
+    docs.forEach(function(doc){
+      specs.push(&#x27;  describe(&#x22;&#x27; + doc.section + &#x27;/&#x27; + doc.id + &#x27;&#x22;, function() {&#x27;);
+      specs.push(&#x27;    beforeEach(function() {&#x27;);
+      specs.push(&#x27;      browser().navigateTo(&#x22;&#x27; + urlPrefix + doc.section + &#x27;/&#x27; + doc.id + &#x27;&#x22;);&#x27;);
+      specs.push(&#x27;    });&#x27;);
+      specs.push(&#x27;  &#x27;);
+      doc.scenarios.forEach(function(scenario){
+        specs.push(indentCode(trim(scenario), 4));
+        specs.push(&#x27;&#x27;);
+      });
+      specs.push(&#x27;});&#x27;);
+      specs.push(&#x27;&#x27;);
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.ngdoc.trim" id="apidoc.element.gulp-ngdocs.ngdoc.trim">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.ngdoc.</span>trim
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function trim(text) {
+  var MAX_INDENT = 9999;
+  var empty = RegExp.prototype.test.bind(/^\s*$/);
+  var lines = text.split(&#x27;\n&#x27;);
+  var minIndent = MAX_INDENT;
+  var indentRegExp;
+  var ignoreLine = (lines[0][0] != &#x27; &#x27;  &#x26;&#x26; lines.length &#x3e; 1);
+  // ignore first line if it has no indentation and there is more than one line
+
+  lines.forEach(function(line){
+    if (ignoreLine) {
+      ignoreLine = false;
+      return;
+    }
+
+    var indent = line.match(/^\s*/)[0].length;
+    if (indent &#x3e; 0 || minIndent == MAX_INDENT) {
+      minIndent = Math.min(minIndent, indent);
+    }
+  });
+
+  indentRegExp = new RegExp(&#x27;^\\s{0,&#x27; + minIndent + &#x27;}&#x27;);
+
+  for ( var i = 0; i &#x3c; lines.length; i++) {
+    lines[i] = lines[i].replace(indentRegExp, &#x27;&#x27;);
+  }
+
+  // remove leading lines
+  while (empty(lines[0])) {
+    lines.shift();
+  }
+
+  // remove trailing
+  while (empty(lines[lines.length - 1])) {
+    lines.pop();
+  }
+  return lines.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  } else {
+    if (atName) {
+      atText.push(line);
+    }
+  }
+});
+flush();
+this.shortName = this.name ? this.name.split(/[\.:#]/).pop().<span class="apidocCodeKeywordSpan">trim</span>() : &#x27;&#x27;;
+this.id = this.id || // if we have an id just use it
+  (this.ngdoc === &#x27;error&#x27; ? this.name : &#x27;&#x27;) ||
+  (((this.file||&#x27;&#x27;).match(/.*(\/|\\)([^(\/|\\)]*)\.ngdoc/)||{})[2]) || // try to extract it from file name
+  this.name; // default to name
+this.description = this.markdown(this.description);
+this.example = this.markdown(this.example);
+this[&#x27;this&#x27;] = this.markdown(this[&#x27;this&#x27;]);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-ngdocs.reader" id="apidoc.module.gulp-ngdocs.reader">module gulp-ngdocs.reader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ngdocs.reader.process" id="apidoc.element.gulp-ngdocs.reader.process">
+        function <span class="apidocSignatureSpan">gulp-ngdocs.reader.</span>process
+        <span class="apidocSignatureSpan">(content, file, section, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function process(content, file, section, options) {
+  // console.log(&#x27;-file-----\n&#x27; + file)
+  // console.log(&#x27;-section-----\n&#x27; + section)
+  // console.log(&#x27;-options-----\n&#x27; + JSON.stringify(options, null, 2))
+  // console.log(&#x27;&#x27;)
+  if (/\.js|.ts$/.test(file)) {
+    processJsFile(content, file, section, options).forEach(function(doc) {
+      exports.docs.push(doc);
+    });
+  } else if (file.match(/\.ngdoc$/)) {
+    var header = &#x27;@section &#x27; + section + &#x27;\n&#x27;;
+    exports.docs.push(new ngdoc.Doc(header + content.toString(),file, 1, options).parse());
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Create a `ngdocs` gulp task
+
+```js
+gulp.task(&#x27;ngdocs&#x27;, [], function () {
+  var gulpDocs = require(&#x27;gulp-ngdocs&#x27;);
+  return gulp.src(&#x27;path/to/src/*.js&#x27;)
+    .pipe(gulpDocs.<span class="apidocCodeKeywordSpan">process</span>())
+    .pipe(gulp.dest(&#x27;./docs&#x27;));
+});
+```
+Create a `ngdocs` gulp task with options
+
+```js
+gulp.task(&#x27;ngdocs&#x27;, [], function () {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
