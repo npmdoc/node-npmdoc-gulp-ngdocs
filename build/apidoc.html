@@ -370,21 +370,21 @@
   function flushFunction (cb) {
     if (merged) { ...</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+        }
+      });
+    }
+    var content = decoder.write(file.contents);
+    if (!file.section) {
+      file.section = defaultSection;
+    }
+    reader.<span class="apidocCodeKeywordSpan">process</span>(content, file.path, file.section, options);
+  }
+  callback(null);
+}
 
-Create a `ngdocs` gulp task
-
-```js
-gulp.task(&#x27;ngdocs&#x27;, [], function () {
-  var gulpDocs = require(&#x27;gulp-ngdocs&#x27;);
-  return gulp.src(&#x27;path/to/src/*.js&#x27;)
-    .pipe(gulpDocs.<span class="apidocCodeKeywordSpan">process</span>())
-    .pipe(gulp.dest(&#x27;./docs&#x27;));
-});
-```
-Create a `ngdocs` gulp task with options
-
-```js
-gulp.task(&#x27;ngdocs&#x27;, [], function () {
+function flushFunction (cb) {
+  if (merged) {
+    docsStreamEndCb = cb;
 ...</pre></li>
     </ul>
 
@@ -892,21 +892,21 @@ this[&#x27;this&#x27;] = this.markdown(this[&#x27;this&#x27;]);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+        }
+      });
+    }
+    var content = decoder.write(file.contents);
+    if (!file.section) {
+      file.section = defaultSection;
+    }
+    reader.<span class="apidocCodeKeywordSpan">process</span>(content, file.path, file.section, options);
+  }
+  callback(null);
+}
 
-Create a `ngdocs` gulp task
-
-```js
-gulp.task(&#x27;ngdocs&#x27;, [], function () {
-  var gulpDocs = require(&#x27;gulp-ngdocs&#x27;);
-  return gulp.src(&#x27;path/to/src/*.js&#x27;)
-    .pipe(gulpDocs.<span class="apidocCodeKeywordSpan">process</span>())
-    .pipe(gulp.dest(&#x27;./docs&#x27;));
-});
-```
-Create a `ngdocs` gulp task with options
-
-```js
-gulp.task(&#x27;ngdocs&#x27;, [], function () {
+function flushFunction (cb) {
+  if (merged) {
+    docsStreamEndCb = cb;
 ...</pre></li>
     </ul>
 
