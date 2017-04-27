@@ -1,6 +1,6 @@
 # npmdoc-gulp-ngdocs
 
-#### api documentation for  [gulp-ngdocs (v0.3.0)](https://github.com/nikhilmodak/gulp-ngdocs#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-ngdocs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-ngdocs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-ngdocs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-ngdocs)
+#### basic api documentation for  [gulp-ngdocs (v0.3.0)](https://github.com/nikhilmodak/gulp-ngdocs#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-ngdocs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-ngdocs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-ngdocs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-ngdocs)
 
 #### gulp plugin for angularjs documentation
 
@@ -80,7 +80,8 @@
     "scripts": {
         "test": "jasmine-node --color spec"
     },
-    "version": "0.3.0"
+    "version": "0.3.0",
+    "bin": {}
 }
 ```
 
